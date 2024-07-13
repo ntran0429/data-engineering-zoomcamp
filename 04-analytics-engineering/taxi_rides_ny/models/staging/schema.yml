@@ -8,9 +8,13 @@ sources:
     tables:
       - name: green_tripdata
       - name: yellow_tripdata
+      - name: fhv_tripdata
 
 
-
+# {% set models_to_generate = codegen.get_models(directory='staging') %}
+# {{ codegen.generate_model_yaml(
+#     model_names = models_to_generate
+# ) }}
 models:
   - name: stg_green_tripdata
     description: ""
@@ -203,5 +207,36 @@ models:
         description: ""
 
       - name: payment_type_description
+        data_type: string
+        description: ""
+
+  - name: stg_fhv_tripdata
+    description: ""
+    columns:
+      - name: dispatching_base_num
+        data_type: string
+        description: ""
+
+      - name: pickup_datetime
+        data_type: datetime
+        description: ""
+
+      - name: dropoff_datetime
+        data_type: datetime
+        description: ""
+
+      - name: pulocationid
+        data_type: float64
+        description: ""
+
+      - name: dolocationid
+        data_type: float64
+        description: ""
+
+      - name: sr_flag
+        data_type: float64
+        description: ""
+
+      - name: affiliated_base_number
         data_type: string
         description: ""
